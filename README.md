@@ -5,7 +5,8 @@
 - Context API  
 - React Router 
 - Formik
-- Axios
+- Axios  
+- Tailwind CSS
 
 ### `npm install`  
 ### `npm run dev`
