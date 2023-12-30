@@ -2,14 +2,29 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
-      <div>
-        <h1> React + MySQL </h1>
-        <ul>
+      <div className="bg-zinc-700 flex justify-between px-10 py-4">
+        <Link
+          to="/"
+          className="text-white font-bold text-2xl flex items-center gap-x-2"
+        >
+          <h1 className="hover:text-gray-500"> React + MySQL </h1>
+        </Link>
+        <ul className="flex gap-3">
             <li>
-                <Link to="/">Home</Link>
+                <Link 
+                  to="/"
+                  className="text-white font-bold text-2xl flex items-center gap-x-2 hover:text-gray-500"
+                >
+                  Home
+                </Link>
             </li>
             <li>
-                <Link to="/new">Create Task</Link>
+                <Link 
+                  to="/new"
+                  className="text-white font-bold text-2xl flex items-center gap-x-2 hover:text-gray-500"
+                >
+                  Create Task
+                </Link>
             </li>
         </ul>
       </div>

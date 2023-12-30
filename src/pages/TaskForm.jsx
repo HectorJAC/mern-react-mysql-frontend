@@ -28,9 +28,7 @@ function TaskForm() {
     }, []);
     
     return (
-      <div>
-
-        <h1>{params.id ? 'Edit task' : 'Create task'}</h1>
+      <div className='py-5'>
         <Formik
             initialValues={task}
             enableReinitialize={true}
@@ -50,26 +48,38 @@ function TaskForm() {
         >
         {
             ({ handleChange, handleSubmit, values, isSubmitting }) => (
-                <Form onSubmit={handleSubmit}>
-                    <label htmlFor="title">Title </label>
+                <Form 
+                    className="bg-slate-300 rounded-md p-4 max-w-sm flex flex-col gap-2 mx-auto"
+                    onSubmit={handleSubmit}
+                >
+                    <h1 className='text-black text-xl font-bold uppercase text-center'>
+                        {params.id ? 'Edit task' : 'Create task'}
+                    </h1>
+                    <label htmlFor="title" className='block font-bold'>Title </label>
                     <input 
                         type="text" 
                         name='title' 
                         placeholder='Write a title'
+                        className='mb-2 px-2 py-1 rounded-md w-full'
                         onChange={handleChange}
                         value={values.title}
                     />
 
-                    <label htmlFor="description">Description </label>
+                    <label htmlFor="description" className='block font-bold'>Description </label>
                     <textarea 
                         name="description" 
                         rows="3"
                         placeholder='Write a description'
+                        className='mb-2 px-2 py-1 rounded-md w-full'
                         onChange={handleChange}
                         value={values.description}
                     ></textarea>
 
-                    <button type='submit' disabled={isSubmitting}>
+                    <button 
+                        type='submit' 
+                        disabled={isSubmitting} 
+                        className='bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded w-full'
+                    >
                         {isSubmitting ? 'Loading...' : 'Save'}
                     </button>
                 </Form>
